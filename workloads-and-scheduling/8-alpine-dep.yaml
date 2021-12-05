@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  managedFields:
+  - apiVersion: v1
+  name: linux
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: alpine-dep
+  name: alpine-dep
+  namespace: linux
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: alpine-dep
+  template:
+    metadata:
+      labels:
+        app: alpine-dep
+    spec:
+      containers:
+      - image: alpine:3.14
+        name: alpine
+        command: ['sh', '-c', 'sleep 300']
