@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: vxrail-pod-master
+  name: vxrail-pod-master
+spec:
+  nodeName: cluster1-master1
+  tolerations:
+  - key: "node-role.kubernetes.io/master"
+    operator: "Exists"
+    effect: "NoSchedule"
+  containers:
+  - image: nginx
+    name: vxrail-pod-master
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
