@@ -1,0 +1,1 @@
+kubectl -n linux rollout undo deployment/alpine-dep --to-revision=1
