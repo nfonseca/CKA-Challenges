@@ -7,4 +7,4 @@
 6. Schedule a new pod called vxrail-pod-master on the master node
 7. Add a label ```allflash=yes``` to nodes 1 & 2
 8. Create and assign a pod called vxrail-pod-all-flash to the nodes with label ```allflash=yes```
-9. Create a deployment with image alpine:3.14 with 5 replicas on namespace linux
+9. Create a deployment with image alpine:3.14 with 5 replicas on namespace linux running the command 'sleep 300'
