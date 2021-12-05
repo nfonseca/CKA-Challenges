@@ -9,4 +9,5 @@
 8. Create and assign a pod called vxrail-pod-all-flash to the nodes with label ```allflash=yes```
 9. Create a deployment with image alpine:3.14 with 5 replicas on namespace linux running the command 'sleep 300'
 10. Update the alpine deployment to use the latest version of the container image
-11. Roll back the alpine deployment back to the version 3.14
+11. View thw rollout history for the alpine-dep deployment
+12. Roll back the alpine deployment back to the version 3.14
