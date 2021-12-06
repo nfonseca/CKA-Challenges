@@ -1,5 +1,4 @@
-# connect to the etcd pod
-kubectl -n kube-system exec etcd-cluster1-master1 -it -- /bin/sh
-
-# from the etcd container
-ETCDCTL_API=3 etcdctl --endpoints=[127.0.0.1:2379] snapshot save snapshotdb
+# get the ip of the etcd pod
+kubectl -n kube-system get pods -o wide
+# from the master host
+sudo ETCDCTL_API=3 etcdctl --endpoints 192.168.101.101:2379 --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key --cacert=/etc/kubernetes/pki/etcd/ca.crt snapshot save snapshotdb
