@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  generation: 1
+  labels:
+    app: wordpress
+  name: wordpress
+  namespace: default
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: wordpress
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: wordpress
+    spec:
+      containers:
+      - image: wordpress
+        imagePullPolicy: Always
+        name: wordpress
+      - image: mysql
+        imagePullPolicy: Always
+        name: mysqldb
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: 'vxrail123'
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
