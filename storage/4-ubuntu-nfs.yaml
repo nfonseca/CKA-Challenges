@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu-nfs
+spec:
+  containers:
+  - image: ubuntu
+    name: ubuntu-nfs
+    volumeMounts:
+    - mountPath: /mnt/nfs
+      name: nfs-mount
+    command: ['sh','-c','sleep 300']
+  volumes:
+  - name: nfs-mount
+    persistentVolumeClaim:
+      claimName: nfs-pvc
