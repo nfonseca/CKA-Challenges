@@ -1,4 +1,3 @@
-vagrant@cluster1-master1:~$ cat redis-dep.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,7 +20,12 @@ spec:
         volumeMounts:
         - name: redis-cfg
           mountPath: /tmp
+        - name: redis-pwd
+          mountPath: /tmp/redis-password
       volumes:
       - name: redis-cfg
         configMap:
           name: redis-cfg
+      - name: redis-pwd
+        secret:
+          secretName: redis-pwd
