@@ -17,6 +17,7 @@ spec:
       containers:
       - image: redis
         name: redis
+        command: ['sh','-c','redis-server /tmp/redis.conf']
         volumeMounts:
         - name: redis-cfg
           mountPath: /tmp
