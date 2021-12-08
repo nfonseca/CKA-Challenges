@@ -1,0 +1,77 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-admins
+  name: nginx-admins
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-admins
+  template:
+    metadata:
+      labels:
+        app: nginx-admins
+    spec:
+      containers:
+      - image: alpine
+        name: alpine
+        command: ['sh','-c','sleep 600']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-operators
+  name: nginx-operators
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: nginx-operators
+  template:
+    metadata:
+      labels:
+        app: nginx-operators
+    spec:
+      containers:
+      - image: alpine
+        name: alpine
+        command: ['sh','-c','sleep 600']
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-secure
+  name: nginx-secure
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-secure
+  template:
+    metadata:
+      labels:
+        app: nginx-secure
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-secure
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nginx-secure
+  name: nginx-secure
+  namespace: default
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx-secure
+  type: ClusterIP
