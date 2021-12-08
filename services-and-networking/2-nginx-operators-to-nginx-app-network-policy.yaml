@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: nginx-ops-to-nginx-app-only
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      app: nginx-operators
+  policyTypes:
+  - Egress
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: nginx-secure
