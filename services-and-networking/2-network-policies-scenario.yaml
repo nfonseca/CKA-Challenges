@@ -15,8 +15,8 @@ spec:
         app: nginx-admins
     spec:
       containers:
-      - image: alpine
-        name: alpine
+      - image: byrnedo/alpine-curl
+        name: alpine-curl
         command: ['sh','-c','sleep 600']
 ---
 apiVersion: apps/v1
@@ -26,7 +26,7 @@ metadata:
     app: nginx-operators
   name: nginx-operators
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-operators
@@ -36,8 +36,8 @@ spec:
         app: nginx-operators
     spec:
       containers:
-      - image: alpine
-        name: alpine
+      - image: byrnedo/alpine-curl
+        name: alpine-curl
         command: ['sh','-c','sleep 600']
 ---
 apiVersion: apps/v1
