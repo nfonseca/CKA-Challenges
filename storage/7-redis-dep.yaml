@@ -1,0 +1,27 @@
+vagrant@cluster1-master1:~$ cat redis-dep.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        volumeMounts:
+        - name: redis-cfg
+          mountPath: /tmp
+      volumes:
+      - name: redis-cfg
+        configMap:
+          name: redis-cfg
