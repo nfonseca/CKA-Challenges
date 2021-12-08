@@ -9,3 +9,8 @@ kubectl exec redis-745f959dd7-c2b75 -it -- ls -la /tmp
 #lrwxrwxrwx 1 root root   31 Dec  8 10:10 ..data -> ..2021_12_08_10_10_34.773039463
 #drwxrwxrwt 3 root root  100 Dec  8 10:10 redis-password
 #lrwxrwxrwx 1 root root   17 Dec  8 10:10 redis.conf -> ..data/redis.conf
+
+kubectl exec k exec redis-68c546d7b6-2rqrf -it -- redis-cli -p 6379 info | grep 'config_file'
+
+#vagrant@cluster1-master1:~$ 
+#config_file:/tmp/redis.conf
