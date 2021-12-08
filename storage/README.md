@@ -6,4 +6,4 @@
 4. Create a Pod named ubuntu-nfs with ```image=ubuntu``` that mounts the NFS PersistentVolumeClaim
 5. Create a secret named app-location with following information: APP_LOCATION:/appdata and export that as an environment variable in a Pod
 6. *using secrets as volumes
-7. *Using configmaps
+7. Create a deployment with 3 replicas of ```image=redis``` with a custom configuration file for redis that will be loaded from a ConfigMap
