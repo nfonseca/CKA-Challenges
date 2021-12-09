@@ -12,6 +12,4 @@ Todo list for Services & Networking
 
 - [ ] The cluster comes with weave-net default CNI. Try to install calico
 
-### Network Policies
 
-- [ ] Create Network Policies
