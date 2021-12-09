@@ -58,3 +58,5 @@ kubectl exec nginx-operators-85f9d77bb4-4rtrd -it -- ping 10.46.0.4
 #18 packets transmitted, 0 packets received, 100% packet loss
 #command terminated with exit code 1
 
+# Delete the NetworkPolicy and verify that the operator Pods can now ping the admin Pods
+
