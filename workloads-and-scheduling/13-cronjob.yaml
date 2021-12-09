@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: run-every-3min
+spec:
+  schedule: "* */3 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: alpine-sleeper
+            image: alpine
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - sleep 30
+          restartPolicy: OnFailure
