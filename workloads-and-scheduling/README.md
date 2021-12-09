@@ -14,3 +14,4 @@
 13. Create a secret named password with the following content 'password:vxrail123' and mount it in a Pod running image nginx
 14. Create a new cronjob which runs alpine and the sleep 30 command. Have the cronjob run every three minutes.
 View the job status to verify.
+15. Create a Job with image=polinux/stress-ng that runs some stress
