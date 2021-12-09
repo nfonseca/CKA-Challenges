@@ -3,7 +3,7 @@
 Todo list for Workloads & Scheduling Exercises
 
 ### CronJobs
-- [ ] Exercise to create a CronJob
+- [x] Exercise to create a CronJob
 
 ### Jobs
 - [ ] Exercise to create a Job
