@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: stress-ng
+spec:
+  parallelism: 4
+  template:
+    spec:
+      containers:
+      - name: stress-ng
+        image: polinux/stress-ng
+        command:
+        - /bin/sh
+        - -c
+        - stress-ng --cpu 4 --vm 2 --timeout 30s
+      restartPolicy: Never
+  backoffLimit: 4
