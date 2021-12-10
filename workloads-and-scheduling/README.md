@@ -16,3 +16,4 @@
 View the job status to verify.
 15. Create a Job with ``image=polinux/stress-ng`` with parallelism=4 that runs some stress on the container
 16. Create a DaemonSet with image=polinux/stress-ng and in order to run a stress test on all the worker nodes
+17. Create a staticPod with ``image=alpine`` that will run the command sleep 30
