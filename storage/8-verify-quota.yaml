@@ -1,0 +1,4 @@
+kubectl -n tiny-ns get resourcequotas
+
+#NAME            AGE   REQUEST                                                  LIMIT
+#tiny-ns-quota   13s   persistentvolumeclaims: 0/5, requests.storage: 0/250Mi
