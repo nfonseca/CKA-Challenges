@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: tiny-ns-quota
+    namespace: tiny-ns
+  spec:
+    hard:
+      persistentvolumeclaims: "5"
+      requests.storage: "250Mi"
