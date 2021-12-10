@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: stress-ng
+spec:
+  selector:
+    matchLabels:
+      name: stress-ng
+  template:
+    metadata:
+      labels:
+        name: stress-ng
+    spec:
+      containers:
+      - name: stress-ng
+        image: polinux/stress-ng
+        command:
+        - sh
+        - -c
+        - stress-ng --cpu 4 --vm 2 --timeout 60s
