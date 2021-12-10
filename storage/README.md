@@ -7,4 +7,4 @@
 5. Create a secret named app-location with following information: APP_LOCATION:/appdata and export that as an environment variable in a Pod
 6. Create a deployment called redis with 3 replicas of ```image=redis``` with a custom configuration file for redis that will be loaded from a ConfigMap. Place the custom configuration file on /tmp inside the container. Also create a secret for that deployment with redis-pwd=changeme and mount that secret under /tmp. Modify the redis server to start with the custom configuration file
 7. Verify that the previous custom configurations have been applied
-8. Create a namespace called tiny-ns and do not allow more than 5 PersistentVolumesClaims to be created on that namespace and a maximum request storage of 250 MB
+8. Create a namespace called tiny-ns and do not allow more than 5 PersistentVolumesClaims to be created on that namespace and a maximum request storage of 250 MB. Verify that the resource quota has been applied.
