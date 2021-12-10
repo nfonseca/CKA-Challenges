@@ -15,3 +15,4 @@
 14. Create a new cronjob which runs alpine and the sleep 30 command. Have the cronjob run every three minutes.
 View the job status to verify.
 15. Create a Job with image=polinux/stress-ng with parallelism=4 that runs some stress on the container
+16. Create a DaemonSet with image=polinux/stress-ng and in order to run a stress test on all the worker nodes
