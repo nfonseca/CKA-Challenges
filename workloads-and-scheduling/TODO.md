@@ -9,4 +9,7 @@ Todo list for Workloads & Scheduling Exercises
 - [x] Exercise to create a Job
 
 ### DameonSets
-- [ ] Create a DaemonSet
+- [x] Create a DaemonSet
+
+### Static Pods
+- [x] Create a Static Pod
