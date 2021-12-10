@@ -6,5 +6,7 @@ Todo list for Workloads & Scheduling Exercises
 - [x] Exercise to create a CronJob
 
 ### Jobs
-- [ ] Exercise to create a Job
+- [x] Exercise to create a Job
 
+### DameonSets
+- [ ] Create a DaemonSet
