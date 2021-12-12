@@ -18,3 +18,4 @@ View the job status to verify.
 16. Create a DaemonSet with image=polinux/stress-ng and in order to run a stress test on all the worker nodes
 17. Create a staticPod with ``image=alpine`` that will run the command sleep 30
 18. Create a Deployment named nginx-resources with 3 replicas of ``image=nginx`` and assign a limit of 250 milicpu and 64MB to each container within the Pod
+19. List all the Pods running on the cluster and sort them by name
