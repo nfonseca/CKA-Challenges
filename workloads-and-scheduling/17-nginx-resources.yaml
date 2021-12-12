@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-resources
+  name: nginx-resources
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-resources
+  template:
+    metadata:
+      labels:
+        app: nginx-resources
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "64Mi"
