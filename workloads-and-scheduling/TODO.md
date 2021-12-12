@@ -13,3 +13,7 @@ Todo list for Workloads & Scheduling Exercises
 
 ### Static Pods
 - [x] Create a Static Pod
+
+
+### Assign resources to Pods
+- [x] Create a Pod and assign CPU and Memory Resources
