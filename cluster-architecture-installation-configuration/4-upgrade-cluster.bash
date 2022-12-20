@@ -1,5 +1,9 @@
 # On Master Node
 
+
+# list all versions available
+apt-cache madison kubeadm
+
 apt-get update && apt-get install -y kubeadm=1.19.x-00
 kubeadm upgrade plan
 kubeadm upgrade apply v1.19.16
