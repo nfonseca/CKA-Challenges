@@ -4,6 +4,9 @@
 # list all versions available
 apt-cache madison kubeadm
 
+# remove the hold on kubeadm
+apt-mark unhold kubeadm
+
 apt-get update && apt-get install -y kubeadm=1.19.x-00
 kubeadm upgrade plan
 kubeadm upgrade apply v1.19.16
